@@ -1,0 +1,49 @@
+Program 1:
+
+package day2;
+
+public class Program_24thJuneAssignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/*Grading Criteria
+		Marks	   Grade
+		90 - 100	 A
+		75 - 89	     B
+		60 - 74	     C
+		40 - 59	     D
+		0 - 39	    Fail
+		 */
+			
+		int mark = 45;
+		
+		if (mark < 0 || mark > 100) 
+		{
+            System.out.println("Invalid mark! Please enter a mark between 0 and 100.");
+        } 
+		else if (mark >= 90 && mark <= 100)
+		{
+			System.out.println(" Grade A");
+		}
+		else if (mark >= 75)
+		{
+			System.out.println(" Grade B");
+		}
+		else if (mark >=60)
+		{
+			System.out.println(" Grade C");
+		}
+		else if (mark >= 40)
+		{
+			System.out.println(" Grade D");
+		}
+		else
+		{
+			System.out.println(" Fail ");
+		}
+		
+
+	}
+
+}
