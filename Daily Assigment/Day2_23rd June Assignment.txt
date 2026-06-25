@@ -1,0 +1,81 @@
+Program 1:
+
+package day1;
+
+public class ProgramASCII_23rdJuneAssignment {
+
+	public static void main(String[] args) {
+		// ASCII value 
+		
+		char word1 = 'A';
+		int value1 = word1;
+		System.out.println("ASCII VALUE OF A = "+value1);
+		
+		char word2 = 'a';
+		int value2 = word2;
+		System.out.println("ASCII VALUE OF a = "+value2); 
+		
+		char word3 = '0';
+		int value3 = word3;
+		System.out.println("ASCII VALUE OF 0 = "+value3); 
+		
+		char word4 = '@';
+		int value4 = word4;
+		System.out.println("ASCII VALUE OF 0 = "+value4); 
+
+	}
+
+}
+
+
+Program 2:
+
+package day1;
+
+public class ProgramTriangle_23rdJuneAssignment {
+
+	public static void main(String[] args) {
+		// Triangle using print and println
+		
+		System.out.println('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.println();
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.println();
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.println();
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.print('*');
+		System.out.println();
+		
+	}
+
+}
+
+
+Program 3:
+
+package day1;
+
+public class ProgramTypecasting_23rdJuneAssignment {
+
+	public static void main(String[] args) {
+		// TypeCasting
+		
+		double value1 = 10.75;
+		System.out.println("Double value is : "+value1);
+		int valueInt = (int)value1;
+		System.out.println("Double into Int Conversion value is : "+valueInt);
+
+	}
+
+}

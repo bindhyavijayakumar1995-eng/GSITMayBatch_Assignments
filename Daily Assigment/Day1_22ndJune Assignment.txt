@@ -1,0 +1,23 @@
+package day1;
+
+public class Program_22ndJuneAssignment {
+	public static void main(String[] args)
+	{
+		//Display Student ID = 101
+		int SerialNum = 101;
+		System.out.println("Student ID = " +SerialNum);
+		
+		//Display Grade = A
+		char Grade ='A';
+		System.out.println("Grade = " +Grade);
+		
+		//Display Passed = true
+		boolean result = true;
+		System.out.println("Passed = " +result);
+		
+		//Display Age = 18
+		int age = 18;
+		System.out.println("Age = " +age);
+	}
+
+}
