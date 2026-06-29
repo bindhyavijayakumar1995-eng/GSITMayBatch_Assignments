@@ -1,0 +1,109 @@
+Program 1
+
+package day3;
+
+public class Program_FactorialOf6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Java program to calculate the factorial of 6
+		
+		int num = 6;
+		int factorial = 1;
+		
+		for (int i=1;i<=num;i++)
+		{
+			factorial = factorial * i;
+		}
+			
+			System.out.println("Factorial of 6 =" +factorial);
+			
+
+	}
+
+}
+
+
+Program 2
+
+package day3;
+
+public class Program_FactorOfNumber24 {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		//Factors of the number 24 
+		
+		int num = 24;
+        
+        System.out.println("Factors of " + num + " are:");
+               
+        
+        for (int i = 1; i <= num; i++) 
+        {
+           
+            if (num % i == 0) 
+            {
+                System.out.println(i+" ");
+            }
+        }
+
+	}
+
+}
+
+
+Program 3
+
+package day3;
+
+public class Program_NoOfDigits {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Java program to count the number of digits in the number 987654 using a loop.
+		
+		long num = 987654L;
+		int count = 0;
+		
+		for (count = 0; num > 0; num = num/10) 
+		{
+			count = count + 1;
+		}
+		
+		System.out.println(" Number of digits = "+count);
+
+	}
+
+}
+
+Program 4
+
+package day3;
+
+public class Program_SumOfDigits {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Java program to find the sum of digits of the number 4567
+		//Extract the last digit using the modulo % 10 and reduce the number using integer division / 10)
+		
+		int num = 4567; 
+		int Reminder = 0;
+		int total = 0;
+		
+		for (
+				total = 0; num > 0; num = num/10)
+		{
+			Reminder = num % 10;
+			total = total + Reminder;
+		}
+		
+		System.out.println(" Sum of Digit = "+total);
+
+	}
+
+}
+
+
