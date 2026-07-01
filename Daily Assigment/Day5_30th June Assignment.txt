@@ -1,0 +1,53 @@
+Program 1
+
+package day5;
+
+public class Program_alternateUCAlphabets {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//For Loop
+		/*
+		char i = 'A';
+		for (;i<='Z';i+=2)
+		{
+			//System.out.print(i+" ");
+		}
+		*/
+		
+		// While Loop
+		
+		char i = 'A';
+		while (i<='Z')
+		{
+			System.out.print(i +" ");
+			i+=2;
+		}
+	}
+
+}
+
+
+Program 2
+
+package day5;
+
+public class Program_alphabetsAsciiValue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char i = 'A';
+		while (i<='Z')
+		{
+			int value = (char)i;
+			System.out.print(i +" ");
+			System.out.print(value +" ");
+			System.out.println();
+			i++;
+		}
+	      
+
+	}
+
+}
