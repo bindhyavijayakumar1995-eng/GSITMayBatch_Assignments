@@ -1,0 +1,96 @@
+Program 1:
+
+package day13;
+
+public class Program1_StudentsDetails {
+
+    // Parent Class "Person"
+    static class Person {
+        String name;
+        int age;
+
+        Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+    // Child Class "Student"
+    static class Student extends Person 
+    {
+        int marks;
+
+        Student(String name, int age, int marks) 
+        {
+            super(name, age);   
+            this.marks = marks;
+        }
+
+        
+        void display() 
+        {
+            System.out.println("Name: " + this.name);
+            System.out.println("Age: " + this.age);
+            System.out.println("Marks: " + this.marks);
+        }
+    }
+
+    
+    public static void main(String[] args) 
+    {
+        Student s1 = new Student("Soniya", 42, 99);
+        s1.display();
+    }
+}
+
+Program 2:
+
+package day13;
+
+public class Program2_Salary 
+{
+	
+	// Employee
+	
+	static class Employee
+	{
+		int id;
+		String name;
+		double basicSalary;
+		
+		Employee(int id,String name,double basicSalary )
+		{
+			this.id= id;
+			this.name = name;
+			this.basicSalary= basicSalary;
+		}
+		
+		double calculateSalary()
+		{
+			double hra = 0.20*this.basicSalary;
+			double bonus = 0.10*this.basicSalary;
+			double totalSalary = this.basicSalary+hra+bonus;
+			return totalSalary;
+		}
+		
+		void display()
+		{
+			System.out.println("Name: " +this.name);
+			System.out.println("ID: " +this.id);
+			System.out.println("Basic Salary: "+this.basicSalary);
+			System.out.println("Total Salary: "+this.calculateSalary());
+			
+		}
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		Employee S2 = new Employee(2371720, "Sonu", 50000);
+        S2.display();
+
+	}
+
+}
