@@ -1,0 +1,154 @@
+Program 1:
+
+package day16;
+
+class Employee
+{
+	int empId;
+	String name;
+	double salary;
+	
+	static String companyName = "ABC Technologies";
+	
+	Employee(int eId, String eName, double eSalary)
+	{
+		this.empId = eId;
+		this.name = eName;
+		this.salary = eSalary;
+	
+	}
+	
+	static void displayCompany()
+	{
+		System.out.println("Company Name: "+companyName+"\n");
+	}
+	
+	void displayEmployee()
+	{
+		System.out.println("Employee Details");
+		System.out.println("----------------");
+		System.out.println("Employee ID: "+empId);
+		System.out.println("Name: "+name);
+		System.out.println("Salary: "+salary);
+	}
+}
+
+public class Program1_Employee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee.displayCompany();
+		Employee obj1 = new Employee(101,"Priya",50000.0);
+		obj1.displayEmployee();
+		Employee obj2 = new Employee(102,"Rahul",62000.0);
+		obj2.displayEmployee();
+		Employee obj3 = new Employee(103,"Anjali",58000.0);
+		obj3.displayEmployee();
+		
+
+	}
+
+}
+
+
+Program 2:
+
+package day16;
+
+class BankAccount
+{
+	final String ACCOUNT_TYPE = "Savings" ;
+	
+	int accountNumber;
+	String accountHolderName;
+	double balance;
+	
+	BankAccount(int accNumber, String accHolder, double accBalance)
+	{
+		this.accountNumber = accNumber;
+		this.accountHolderName = accHolder;
+		this.balance = accBalance;
+	}
+	
+	void displayAccountDetails()
+	{
+		System.out.println("Account Details");
+		System.out.println("---------------");
+		System.out.println("Account Type: "+ACCOUNT_TYPE);
+		System.out.println("Account Number: "+accountNumber);
+		System.out.println("Account Holder: "+accountHolderName);
+		System.out.println("Balance: "+balance);
+	}
+}
+
+public class Program2_BankAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		BankAccount obj1 = new BankAccount(123456789,"Rohan Sharma",85000.0);
+		obj1.displayAccountDetails();
+		
+		//obj1.ACCOUNT_TYPE = "Current";
+
+	}
+
+}
+
+
+Program 3:
+
+package day16;
+
+class Vehicle
+{
+	String brand;
+	int year;
+	
+	Vehicle(String vBrand, int vYear)
+	{
+		this.brand = vBrand;
+		this.year = vYear;
+	}
+	
+	void displayVehicleInfo()
+	{
+		System.out.println("Vehicle Information");
+		System.out.println("-------------------");
+		System.out.println("Brand: "+brand);
+		System.out.println("Year: "+year);
+	}
+}
+
+class Car extends Vehicle
+{
+	String model;
+	
+	Car(String vBrand, int vYear, String vModel)
+	{
+		super(vBrand,vYear);
+		this.model = vModel;
+	}
+	
+	void displayVehicleInfo()
+	{
+		super.displayVehicleInfo();
+		System.out.println();
+		System.out.println("Car Information");
+		System.out.println("-------------------");
+		System.out.println("Model: "+model);
+			
+	}
+}
+	
+
+public class Program3_Vehicle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car obj1 = new Car("Toyota",2023,"Fortuner");
+		obj1.displayVehicleInfo();
+
+	}
+
+}
