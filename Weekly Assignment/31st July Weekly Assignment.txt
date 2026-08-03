@@ -1,0 +1,207 @@
+Program 1:
+
+package day19;
+
+public class Program1_RemoveDuplicateCharacters {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String input = "programming";
+        StringBuilder result = new StringBuilder();
+
+        
+        boolean[] seen = new boolean[256]; 
+
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+
+            if (!seen[c]) {
+                seen[c] = true;   
+                result.append(c); 
+            }
+        }
+
+        System.out.println("Input: " + input);
+        System.out.println("Output: " + result.toString());
+
+	}
+
+}
+
+
+Program 2
+
+package day19;
+
+public class Program2_SumOfNumbersInString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String input = "10,20,30,40";
+	     String[] numbers = input.split(",");
+	        
+	        int sum = 0;
+	        
+	        
+	        for (String num : numbers) {
+	            sum += Integer.parseInt(num); 
+	        }
+	        
+	        System.out.println("Input: " + input);
+	        System.out.println("Output: " + sum);
+
+	}
+
+}
+
+
+Program 3
+
+package day19;
+import java.util.Arrays;
+
+public class program3_AnagaramConcept {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String str1 = "listen";
+	        String str2 = "silent";
+	        
+	        str1 = str1.replaceAll("\\s", "").toLowerCase();
+	        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+	        
+	        if (str1.length() != str2.length()) {
+	            System.out.println("Not Anagram");
+	            return;
+	        }
+	        
+	        char[] arr1 = str1.toCharArray();
+	        char[] arr2 = str2.toCharArray();
+	        
+	        Arrays.sort(arr1);
+	        Arrays.sort(arr2);
+	       
+	        if (Arrays.equals(arr1, arr2)) {
+	            System.out.println("Anagram");
+	        } else {
+	            System.out.println("Not Anagram");
+	        }
+
+	}
+
+}
+
+
+Program 4
+
+package day19;
+import java.util.*;
+
+public class Program4_ListDuplicate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
+        List<Integer> list2 = Arrays.asList(3, 4, 5, 6, 7);
+
+        
+        Set<Integer> set1 = new HashSet<>(list1);
+        Set<Integer> set2 = new HashSet<>(list2);
+
+       
+        set1.retainAll(set2);
+
+        
+        List<Integer> commonElements = new ArrayList<>(set1);
+
+        System.out.println("Common Elements: " + commonElements);
+
+	}
+
+}
+
+
+Program 5
+
+package day19;
+import java.util.*;
+
+public class Program5_FindingMissingNumbers {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Integer> inputList = Arrays.asList(1, 2, 4, 6, 7, 9);
+        int N = 10;
+
+        
+        Set<Integer> set = new HashSet<>(inputList);
+
+        List<Integer> missingNumbers = new ArrayList<>();
+
+        
+        for (int i = 1; i <= N; i++) {
+            if (!set.contains(i)) {
+                missingNumbers.add(i);
+            }
+        }
+
+        System.out.println("Input: " + inputList);
+        System.out.println("N = " + N);
+        System.out.println("Missing Numbers: " + missingNumbers);
+
+	}
+
+}
+
+
+Program 6
+
+package day19;
+import java.util.*;
+import java.util.stream.*;
+
+class Employee {
+    private int id;
+    private String name;
+    private String department;
+    private double salary;
+    private int age;
+
+    // Constructor
+    public Employee(int id, String name, String department, double salary, int age) {
+        this.id = id;
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+        this.age = age;
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+}
+public class Program6_Employee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Employee> employees = Arrays.asList(
+	            new Employee(1, "Rahul", "IT", 50000, 32),
+	            new Employee(2, "Neha", "HR", 60000, 35),
+	            new Employee(3, "Aman", "Finance", 70000, 40),
+	            new Employee(4, "Kiran", "IT", 45000, 28),
+	            new Employee(5, "Ravi", "Sales", 48000, 29)
+	        );
+
+	        // Filter employees older than 30 and print their names and ages
+	        employees.stream()
+	                 .filter(emp -> emp.getAge() > 30)
+	                 .forEach(emp -> System.out.println(emp.getName() + " - " + emp.getAge()));
+
+	}
+
+}
