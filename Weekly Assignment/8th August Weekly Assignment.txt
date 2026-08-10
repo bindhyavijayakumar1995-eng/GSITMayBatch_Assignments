@@ -1,0 +1,164 @@
+Program 1:
+
+package day19;
+
+import java.util.Arrays;
+
+public class Program_Anagram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String str1 = "listen";
+	        String str2 = "silent";
+	        
+	        str1 = str1.replaceAll("\\s", "").toLowerCase();
+	        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+	        
+	        if (str1.length() != str2.length()) {
+	            System.out.println("Not Anagram");
+	            return;
+	        }
+	        
+	        char[] arr1 = str1.toCharArray();
+	        char[] arr2 = str2.toCharArray();
+	        
+	        Arrays.sort(arr1);
+	        Arrays.sort(arr2);
+	       
+	        if (Arrays.equals(arr1, arr2)) {
+	            System.out.println("Anagram");
+	        } else {
+	            System.out.println("Not Anagram");
+	        }
+
+	}
+
+}
+
+
+Program 2:
+
+package day19;
+
+public class Program_LongestCommonPrefix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] strs = {"flower", "flow", "flight"};
+
+        String prefix = findLongestCommonPrefix(strs);
+
+        if (prefix.length() > 0) {
+            System.out.println("Longest Common Prefix: " + prefix);
+        } else {
+            System.out.println("No Common Prefix");
+        }
+    }
+
+    public static String findLongestCommonPrefix(String[] strs) 
+    {
+        if (strs == null || strs.length == 0) return "";       
+        String prefix = strs[0];  
+        for (int i = 1; i < strs.length; i++) 
+        {
+            while (strs[i].indexOf(prefix) != 0) 
+            {
+                
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        return prefix;
+
+	}
+
+}
+
+
+Program 3:
+
+package day19;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Program_FirstNonRepeatingCharacter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		   String input = "swiss";
+
+	        char result = findFirstNonRepeating(input);
+
+	        if (result != 0) {
+	            System.out.println("First Non-Repeating Character: " + result);
+	        } else {
+	            System.out.println("No Non-Repeating Character Found");
+	        }
+	    }
+
+	    public static char findFirstNonRepeating(String str) {
+	        // LinkedHashMap preserves insertion order
+	        Map<Character, Integer> countMap = new LinkedHashMap<>();
+
+	        // Count occurrences of each character
+	        for (char c : str.toCharArray()) {
+	            countMap.put(c, countMap.getOrDefault(c, 0) + 1);
+	        }
+	       
+	        for (Map.Entry<Character, Integer> entry : countMap.entrySet()) {
+	            if (entry.getValue() == 1) {
+	                return entry.getKey();
+	            }
+	        }
+
+	        return 0; 
+
+	}
+
+}
+
+
+Program 4:
+
+package day19;
+import java.io.*;
+import java.util.*;
+
+public class Program_WordFrequencyFromFile {
+
+	public static void main(String[] args) {
+		
+	    String filePath = "C:\\\\Users\\\\Bindhya\\\\OneDrive\\\\Desktop\\\\Example.txt";
+        
+        Map<String, Integer> wordCount = new LinkedHashMap<>();
+        try (BufferedReader br = new BufferedReader
+        		(new FileReader(filePath))) 
+        {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                
+                String[] words = line.toLowerCase().split("\\W+");
+
+                for (String word : words) {
+                    if (!word.isEmpty()) {
+                        wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+                    }
+                }
+            }
+        } 
+        catch (IOException e) 
+        {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+        
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+
+	}
+
+}
+
+
