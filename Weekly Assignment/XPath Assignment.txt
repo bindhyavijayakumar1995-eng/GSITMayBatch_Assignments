@@ -1,0 +1,98 @@
+XPath Assignment
+
+1. following-sibling
+Locate the Username input using the "Username" label and the following-sibling axis.
+= //label[text() = 'Username']/following-sibling::*
+
+2. preceding-sibling
+Locate the Password label using the Password input and the preceding-sibling axis.
+
+= //input[@id='password']/preceding-sibling::*
+
+3. normalize-space()
+Locate the element whose visible text is "LOGIN", ignoring the spaces around the text.
+
+= //*[normalize-space(text())='LOGIN']
+
+4. contains()
+Locate the button whose text contains the word "Login".
+
+= //button[@id='login-button']
+
+5. contains() + normalize-space()
+Locate the element whose normalized text contains the word "Submit".
+
+= //*[contains(normalize-space(text()),'Submit')]
+
+
+6. translate()
+Locate the element containing "LOGIN" such that the XPath works regardless of uppercase/lowercase differences.
+
+//*[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),'login')]
+
+7. translate() + contains()
+Locate the button whose text contains "submit", ignoring uppercase/lowercase differences.
+
+= //button[contains(translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),
+  'submit')]
+
+8. following
+Locate the verification-code input using the "Email verification is required." text and the following axis.
+
+= //*[contains(text(),'Email verification is required')]/following::input
+
+9. preceding
+Locate the Profile Details heading using the profile-email input and the preceding axis.
+
+= (//*[@id= 'profile-email']/preceding::*)[last()-1]
+
+10. parent + child
+Locate the Mobile Number input using the text "Mobile Number" and its parent/child relationship.
+
+= //*[normalize-space(text())='Mobile Number']/following-sibling::input
+
+11. ancestor
+Locate the registration section containing the "REGISTER NOW" button using the ancestor axis.
+
+= //button[normalize-space(text())='REGISTER NOW']/ancestor::*
+
+= //button[normalize-space(text())='REGISTER NOW']/ancestor::div[@id='registration-section']
+
+12. following-sibling + contains()
+Locate the REGISTER NOW button using the div whose text contains "Registration" and the following-sibling axis.
+
+= //*[contains(text(),'Registration')]/following-sibling::button
+
+13. normalize-space() + translate()
+Locate the element whose text is "User NAME", ignoring extra spaces and uppercase/lowercase differences.
+
+= //*[translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz')='user name']
+
+14. contains() + following-sibling
+Locate the Email input using a label whose text contains "Email" and the following-sibling axis.
+
+=//*[contains(text(),'Email Address')]/following-sibling::input
+
+15. translate() + normalize-space() + contains()
+Locate the button whose text contains "LOGIN", ignoring leading/trailing spaces and uppercase/lowercase differences.
+
+= //button[contains(translate(normalize-space(text()), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),'login')]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
